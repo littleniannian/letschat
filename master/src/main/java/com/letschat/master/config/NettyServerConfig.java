@@ -12,18 +12,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class NettyServerConfig {
     @Value("${tcp.port}")
-    private int tcpPort;
-
-    @Value("${boss.thread.count}")
-    private int bossCount;
-
-    @Value("${worker.thread.count}")
-    private int workerCount;
+    public int tcpPort;
 
     @Value("${so.keepalive}")
-    private boolean keepAlive;
+    public boolean keepAlive;
 
     @Value("${so.backlog}")
-    private int backlog;
+    public int backlog;
 
 }

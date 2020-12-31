@@ -20,7 +20,6 @@ import java.net.InetAddress;
  * @ClassName ChatServerHandler.java
  * @createTime 2020年12月28日 15:06:00
  */
-@Component
 @ChannelHandler.Sharable
 @Slf4j
 public class ChatServerHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
@@ -70,6 +69,6 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<TextWebSocket
     public void handlerRemoved(ChannelHandlerContext ctx) throws Exception {
         Channel incoming = ctx.channel();
         channels.writeAndFlush(new TextWebSocketFrame("[用户] - 离开"));
-        channels.remove(ctx.channel());
+        channels.remove(incoming);
     }
 }
