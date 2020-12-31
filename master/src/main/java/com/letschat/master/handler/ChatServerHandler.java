@@ -33,10 +33,10 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<TextWebSocket
         for (Channel channel: channels) {
             log.info("聊天信息 {}",msg.text());
             if(channel!=incoming){
-                // 群聊
+                // 发送给除发送人以外的人
                 channel.writeAndFlush(new TextWebSocketFrame("["+ InetAddress.getLocalHost() +"]")+msg.text());
             }else {
-                // 私聊
+                // 显示给发送人自己
                 channel.writeAndFlush(new TextWebSocketFrame("[you]"+msg.text()));
             }
         }
