@@ -23,6 +23,9 @@ public class NettyServerConfig {
     @Value("${so.backlog}")
     public int backlog;
 
+    @Value("${server.host}")
+    private String serverHost;
+
     @Bean
     public MessageDispatcher messageDispatcher(){
         return new MessageDispatcher();
