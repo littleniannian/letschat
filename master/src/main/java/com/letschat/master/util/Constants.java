@@ -10,4 +10,5 @@ public class Constants {
     public static final String MSG_DECODING = "GBK";
     public static final String MSG_ENCODING = "UTF-8";
     public static final String MSG_SUFFIX = "\r\n";
+    public static final String CHANNEL_ATTR_KEY = "user";
 }

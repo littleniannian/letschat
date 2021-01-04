@@ -1,3 +1,4 @@
+/*
 package com.letschat.master.handler;
 
 import com.letschat.master.util.RandomUtil;
@@ -14,12 +15,14 @@ import org.springframework.stereotype.Component;
 
 import java.net.InetAddress;
 
+*/
 /**
  * @author jarvis.yuan
  * @version 1.0.0
  * @ClassName ChatServerHandler.java
  * @createTime 2020年12月28日 15:06:00
- */
+ *//*
+
 @ChannelHandler.Sharable
 @Slf4j
 public class ChatServerHandler extends SimpleChannelInboundHandler<TextWebSocketFrame> {
@@ -33,7 +36,7 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<TextWebSocket
         for (Channel channel: channels) {
             log.info("聊天信息 {}",msg.text());
             if(channel!=incoming){
-                // 发送给除发送人以外的人
+                // 发送给除自己以外的人
                 channel.writeAndFlush(new TextWebSocketFrame("["+ InetAddress.getLocalHost() +"]")+msg.text());
             }else {
                 // 显示给发送人自己
@@ -72,3 +75,4 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<TextWebSocket
         channels.remove(incoming);
     }
 }
+*/

@@ -1,6 +1,9 @@
 package com.letschat.master.config;
 
+import com.letschat.master.common.dispatcher.MessageDispatcher;
+import com.letschat.master.common.dispatcher.MessageHandlerContainer;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -19,5 +22,15 @@ public class NettyServerConfig {
 
     @Value("${so.backlog}")
     public int backlog;
+
+    @Bean
+    public MessageDispatcher messageDispatcher(){
+        return new MessageDispatcher();
+    }
+
+    @Bean
+    public MessageHandlerContainer messageHandlerContainer(){
+        return new MessageHandlerContainer();
+    }
 
 }

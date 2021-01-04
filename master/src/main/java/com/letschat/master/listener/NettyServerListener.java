@@ -1,3 +1,4 @@
+/*
 package com.letschat.master.listener;
 
 import com.letschat.master.server.ChatServer;
@@ -8,12 +9,14 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+*/
 /**
  * @author jarvis.yuen
  * @version 1.0.0
  * @ClassName NettyServerListener.java
  * @createTime 2020年12月31日 13:41:00
- */
+ *//*
+
 @Component
 @WebListener
 @Slf4j
@@ -36,3 +39,4 @@ public class NettyServerListener implements ServletContextListener {
 
     }
 }
+*/

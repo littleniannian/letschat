@@ -1,3 +1,4 @@
+/*
 package com.letschat.master.handler;
 
 import com.letschat.master.util.Constants;
@@ -12,12 +13,14 @@ import lombok.extern.slf4j.Slf4j;
 import java.net.InetAddress;
 import java.util.Date;
 
+*/
 /**
  * @author jarvis.yuen
  * @version 1.0.0
  * @ClassName ChatStringServerHandler.java
  * @createTime 2020年12月31日 13:52:00
- */
+ *//*
+
 @Slf4j
 public class ChatStringServerHandler extends SimpleChannelInboundHandler<String> {
     private static ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
@@ -41,11 +44,13 @@ public class ChatStringServerHandler extends SimpleChannelInboundHandler<String>
         super.exceptionCaught(ctx, cause);
     }
 
-    /**
+    */
+/**
      * 连接频道后
      * @param ctx
      * @throws Exception
-     */
+     *//*
+
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         String remoteAddress = String.valueOf(ctx.channel().remoteAddress().toString());
@@ -57,11 +62,13 @@ public class ChatStringServerHandler extends SimpleChannelInboundHandler<String>
         channels.add(ctx.channel());
     }
 
-    /**
+    */
+/**
      * 断开连接后
      * @param ctx
      * @throws Exception
-     */
+     *//*
+
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         String remoteAddress = String.valueOf(ctx.channel().remoteAddress().toString());
@@ -70,6 +77,7 @@ public class ChatStringServerHandler extends SimpleChannelInboundHandler<String>
         channels.remove(ctx.channel());
     }
 
+*/
 /*    @Override
     public void handlerAdded(ChannelHandlerContext ctx) throws Exception {
         log.info("远程连接的用户地址{}",ctx.channel().remoteAddress());
@@ -83,5 +91,7 @@ public class ChatStringServerHandler extends SimpleChannelInboundHandler<String>
         Channel incoming = ctx.channel();
         channels.writeAndFlush("[有个用户离开] - 离开");
         channels.remove(incoming);
-    }*/
+    }*//*
+
 }
+*/
