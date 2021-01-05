@@ -29,4 +29,5 @@ public class Invocation {
         this.type = type;
         this.message = SU.getJsonMapper().writeValueAsString(message);
     }
+
 }

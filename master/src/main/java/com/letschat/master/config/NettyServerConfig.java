@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class NettyServerConfig {
-    @Value("${tcp.port}")
+    @Value("${nettyServer.port}")
     public int tcpPort;
 
     @Value("${so.keepalive}")
@@ -24,7 +24,7 @@ public class NettyServerConfig {
     public int backlog;
 
     @Value("${server.host}")
-    private String serverHost;
+    public String serverHost;
 
     @Bean
     public MessageDispatcher messageDispatcher(){

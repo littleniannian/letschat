@@ -28,6 +28,10 @@ public class MessageHandlerContainer implements InitializingBean {
     @Autowired
     private ApplicationContext applicationContext;
 
+    /**
+     * 在配置类加载完毕后,将消息处理器放入容器
+     * @throws Exception
+     */
     @Override
     public void afterPropertiesSet() throws Exception {
         applicationContext.getBeansOfType(MessageHandler.class).values()

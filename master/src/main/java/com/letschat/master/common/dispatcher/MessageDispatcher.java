@@ -26,9 +26,14 @@ public class MessageDispatcher extends SimpleChannelInboundHandler<Invocation> {
 
     private final ExecutorService executor = Executors.newFixedThreadPool(200);
 
+    /**
+     * 这里将消息匹配到对应的消息handler进行处理
+     * @param ctx
+     * @param invocation
+     * @throws Exception
+     */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Invocation invocation) throws Exception {
-        // TODO
         MessageHandler messageHandler = messageHandlerContainer.getMessageHandler(invocation.getType());
         Class<? extends Message> messageClass = MessageHandlerContainer.getMessageClass(messageHandler);
         Message message = SU.getJsonMapper().readValue(invocation.getMessage(),messageClass);

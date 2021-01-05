@@ -20,6 +20,6 @@ public class InvocationEncoder extends MessageToByteEncoder<Invocation> {
         byte[] content = SU.getJsonMapper().writeValueAsBytes(invocation);
         out.writeInt(content.length);
         out.writeBytes(content);
-        log.info("[encode][连接({}) 编码了一条消息({})]", ctx.channel().id(), invocation);
+        log.info("[encode][连接[{}] 编码了一条消息[{}]]", ctx.channel().id(), invocation);
     }
 }
