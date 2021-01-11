@@ -1,2 +1,3 @@
 # letschat
-netty chatroom and lets fcking chating
+netty chatroom
+lets chat
