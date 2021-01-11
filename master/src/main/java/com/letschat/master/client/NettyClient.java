@@ -1,6 +1,5 @@
 package com.letschat.master.client;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.letschat.master.common.Invocation;
 import com.letschat.master.config.NettyServerConfig;
 import io.netty.bootstrap.Bootstrap;
@@ -9,7 +8,6 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -84,6 +82,7 @@ public class NettyClient {
      * 而在内部的具体逻辑，调用 NettyClient 的 #start() 方法，发起连接 Netty 服务端。
      */
     public void reconnect(){
+        // 实现定时调用
         eventLoopGroup.schedule(()->{
             log.info("[reconnect][开始重连]");
             start();

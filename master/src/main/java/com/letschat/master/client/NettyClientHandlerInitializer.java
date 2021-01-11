@@ -32,6 +32,7 @@ public class NettyClientHandlerInitializer extends ChannelInitializer<Channel> {
     protected void initChannel(Channel channel) throws Exception {
         channel.pipeline()
                 // 空闲检测
+                // 在 Channel 的读或者写空闲时间太长时，将会触发一个 IdleStateEvent 事件。
                 .addLast(new IdleStateHandler(READ_TIMEOUT_SECONDS,0,0))
                 .addLast(new ReadTimeoutHandler(3*READ_TIMEOUT_SECONDS))
                 .addLast(new InvocationEncoder())

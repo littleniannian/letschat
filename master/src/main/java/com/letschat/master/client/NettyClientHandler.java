@@ -8,7 +8,6 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.handler.timeout.IdleStateEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
 /**
@@ -33,6 +32,12 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
         super.channelInactive(ctx);
     }
 
+    /**
+     * 有用户事件触发时，运行心跳检测
+     * @param ctx
+     * @param event
+     * @throws Exception
+     */
     @Override
     public void userEventTriggered(ChannelHandlerContext ctx, Object event) throws Exception {
         if(event instanceof IdleStateEvent){

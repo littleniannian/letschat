@@ -36,6 +36,7 @@ public class NettyServerHandlerInitializer extends ChannelInitializer<Channel> {
         ChannelPipeline channelPipeline = ch.pipeline();
         // <2> 添加一堆 NettyServerHandler 到 ChannelPipeline 中
         channelPipeline
+                // 添加了一个 ReadTimeoutHandler 处理器，它在超过指定时间未从对端读取到数据，会抛出 ReadTimeoutException 异常
                 .addLast(new ReadTimeoutHandler(READ_TIMEOUT_SECONDS, TimeUnit.SECONDS))// 空闲检测
                 .addLast(new InvocationEncoder())// 编码器
                 .addLast(new InvocationDecoder())// 解码器

@@ -1,7 +1,5 @@
 package com.letschat.master.common.dispatcher;
 
-import com.letschat.master.common.dispatcher.Message;
-import com.letschat.master.common.dispatcher.MessageHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.aop.framework.AopProxyUtils;
 import org.springframework.beans.factory.InitializingBean;

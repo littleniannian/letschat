@@ -7,7 +7,6 @@ import lombok.Data;
  * @author jarvis.yuen
  * @version 1.0.0
  * @ClassName AuthResponse.java
- * @Description TODO
  * @createTime 2021年01月05日 15:40:00
  */
 @Data
