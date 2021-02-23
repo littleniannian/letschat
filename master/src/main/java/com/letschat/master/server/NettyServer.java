@@ -27,12 +27,12 @@ public class NettyServer {
     /**
      * boss 线程组，用于服务端接受客户端的连接
      */
-    private EventLoopGroup bossGroup = new NioEventLoopGroup();
+    private final EventLoopGroup bossGroup = new NioEventLoopGroup();
 
     /**
      * worker 线程组，用于服务端接受客户端的数据读写
      */
-    private EventLoopGroup workerGroup = new NioEventLoopGroup();
+    private final EventLoopGroup workerGroup = new NioEventLoopGroup();
 
     private Channel channel;
 

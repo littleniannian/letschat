@@ -30,7 +30,7 @@ public class NettyClient {
     @Autowired
     private NettyServerConfig config;
 
-    private EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
+    private final EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
 
     private volatile Channel channel;
 
