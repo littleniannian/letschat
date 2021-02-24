@@ -12,6 +12,8 @@ import lombok.Data;
 @Data
 public class ChatSendResponse implements Message {
 
+    public static final String TYPE = "CHAT_SEND_RESPONSE";
+
     /**
      * 消息编号
      */

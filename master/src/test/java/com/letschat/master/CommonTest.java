@@ -1,5 +1,8 @@
 package com.letschat.master;
 
+import com.letschat.master.common.Invocation;
+import org.junit.jupiter.api.Test;
+
 /**
  * @author jarvis.yuen
  * @version 1.0.0
@@ -7,6 +10,8 @@ package com.letschat.master;
  * @createTime 2021年01月05日 11:03:00
  */
 public class CommonTest {
+
+    private final Invocation invocation = new Invocation();
 
     private int binarySearch(int[] arr,int target){
         int l=0,r=arr.length-1;
@@ -26,8 +31,10 @@ public class CommonTest {
     }
 
 
+    @Test
     public void algTest(){
-
+        invocation.setMessage("message");
+        System.out.println(invocation);
     }
 
 

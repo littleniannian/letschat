@@ -38,7 +38,7 @@ public class AuthRequestHandler implements MessageHandler<AuthRequest> {
                 return;
             }
             // 将用户和Channel绑定
-            // 这里暂时直接将accessToken作为User
+            // TODO 这里暂时直接将accessToken作为User
             nettyChannelManager.addUser(channel,message.getAccessToken());
             AuthResponse authResponse = new AuthResponse();
             authResponse.setCode(0);

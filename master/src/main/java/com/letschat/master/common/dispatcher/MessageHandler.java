@@ -1,6 +1,5 @@
 package com.letschat.master.common.dispatcher;
 
-import com.letschat.master.common.dispatcher.Message;
 import io.netty.channel.Channel;
 
 /**

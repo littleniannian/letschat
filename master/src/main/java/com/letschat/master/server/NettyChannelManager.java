@@ -22,7 +22,7 @@ import java.util.concurrent.ConcurrentMap;
 @Component
 public class NettyChannelManager {
 
-    private static final AttributeKey<String> CHANNEL_ATTR_KEY_USER = AttributeKey.newInstance(Constants.CHANNEL_ATTR_KEY);
+    public static final AttributeKey<String> CHANNEL_ATTR_KEY_USER = AttributeKey.newInstance(Constants.CHANNEL_ATTR_KEY);
 
     /**
      * Channel 映射
