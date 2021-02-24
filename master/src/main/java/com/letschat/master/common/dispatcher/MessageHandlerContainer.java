@@ -34,7 +34,7 @@ public class MessageHandlerContainer implements InitializingBean {
     public void afterPropertiesSet() throws Exception {
         applicationContext.getBeansOfType(MessageHandler.class).values()
                 .forEach(messageHandler -> handlers.put(messageHandler.getType(),messageHandler));
-        log.info("消息处理器的数量 [{}]",handlers.size());
+        log.info("消息处理器的数量 [{}] 消息处理器的类型 [{}]",handlers.size(),handlers.keySet());
     }
 
     /**
